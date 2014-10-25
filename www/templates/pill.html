@@ -5,13 +5,13 @@
   <ion-content class="has-header">
     <img ng-src="{{pill.image}}" alt=""> 
     {{pill.description}}
-    <a href="">Drug Information</a>
-    <a href="">Order Refill</a>
-    </ion-content>
-      <div class="bar bar-footer">
-        <button class="button button-clear">
-            Write Review
-            <i class="icon ion-edit"></i>
-        </button>
-      </div>
+    <div class="link" ng-click="browser(pill.information)">Drug Information</div>
+    <div class="link" ng-click="browser(pill.refill)">Order Refill</div>
+  </ion-content>
+  <div class="bar bar-footer">
+    <button class="button button-clear">
+        Write Review
+        <i class="icon ion-edit"></i>
+    </button>
+  </div>
 </ion-view>

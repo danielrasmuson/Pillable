@@ -77,6 +77,10 @@ angular.module('starter.controllers', [])
     satisfaction: 100,
     comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
   };
+
+  $scope.browser = function(link){
+    var ref = window.open(link, '_blank', 'location=yes');
+  };
   
 
 
