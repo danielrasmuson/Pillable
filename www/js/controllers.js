@@ -114,4 +114,8 @@ angular.module('starter.controllers', [])
     name: $location.path().split('/').pop(),
     description: "commonly used for anxiety"
   };
+})
+
+.controller('ProfileCtrl', function($scope, $location) {
+  $scope.name = "Daniel Rasmuson";
 });
