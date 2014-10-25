@@ -48,7 +48,37 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PillCtrl', function($scope, $location) {
-  $scope.pillName = $location.path().split('/').pop();
+  $scope.pill = {
+    name: $location.path().split('/').pop(),
+    description: "commonly used for anxiety",
+    information: "http://pillbox.nlm.nih.gov/pillimage/search.php",
+    image: 'http://placehold.it/100x100',
+    refill: "http://www.walgreens.com/",
+  };
+  $scope.pill.reviews = [];
+  $scope.pill.reviews[0] = {
+    difficulty: 5,
+    weightGain: 40,
+    timeOn: 70,
+    satisfaction: 60,
+    comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
+  };
+  $scope.pill.reviews[1] = {
+    difficulty: 4,
+    weightGain: 10,
+    timeOn: 30,
+    satisfaction: 30,
+    comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
+  };
+  $scope.pill.reviews[2] = {
+    difficulty: 8,
+    weightGain: -10,
+    timeOn: 120,
+    satisfaction: 100,
+    comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
+  };
+  
+
 
 })
 
