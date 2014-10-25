@@ -60,6 +60,7 @@ angular.module('starter.controllers', [])
     difficulty: 5,
     weightGain: 40,
     timeOn: 70,
+    moodChange: 69,
     satisfaction: 60,
     comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
   };
@@ -67,6 +68,7 @@ angular.module('starter.controllers', [])
     difficulty: 4,
     weightGain: 10,
     timeOn: 30,
+    moodChange: 29,
     satisfaction: 30,
     comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
   };
@@ -74,12 +76,23 @@ angular.module('starter.controllers', [])
     difficulty: 8,
     weightGain: -10,
     timeOn: 120,
+    moodChange: 119,
     satisfaction: 100,
     comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
   };
 
   $scope.browser = function(link){
     var ref = window.open(link, '_blank', 'location=yes');
+  };
+
+  $scope.getAverage = function(key){
+    total = 0;
+    count = 0;
+    for (var i = 0; i < $scope.pill.reviews.length; i++) {
+      total += $scope.pill.reviews[i][key];
+      count += 1;
+    }
+    return Math.round(total/count);
   };
   
 
