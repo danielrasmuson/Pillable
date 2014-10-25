@@ -3,11 +3,15 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
 
-  <ion-content class="has-header">
-    <img ng-src="{{pill.image}}" alt=""> 
-    {{pill.description}}
-    <div class="link" ng-click="browser(pill.information)">Drug Information</div>
-    <div class="link" ng-click="browser(pill.refill)">Order Refill</div>
+  <ion-content class="has-header" id="pill">
+    <div id="header">
+      <img ng-src="{{pill.image}}" alt="" style="display: inline-block;"> 
+      <p id="description">{{pill.description}}</p>
+    </div>
+
+    <div class="item item-divider">
+      Reviews 
+    </div>
     <table>
       <tr>
         <td>Difficulty to get off</td>
@@ -26,10 +30,21 @@
         <td>{{getAverage('satisfaction')}}</td>
       </tr>
     </table>
+
+    <br>
+
+    <ul class="list">
+      <div class="item item-divider">
+        Action 
+      </div>
+      <li class="item" ng-click="browser(pill.information)">Drug Information</li>
+      <li class="item" ng-click="browser(pill.refill)">Order Refill<li></li> 
+    </ul>
+    <br>
   </ion-content>
 
   <div class="bar bar-footer">
-    <button class="button button-clear" ng-click="writeReview(pill.name)">
+    <button class="button button-clear" ng-click="writeReview(pill.name)" style="width: 100%;">
         Write Review
         <i class="icon ion-edit"></i>
     </button>

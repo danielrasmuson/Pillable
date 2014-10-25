@@ -5,19 +5,19 @@
   <ion-content class="has-header">
     <h3>How Hard is it to go off...</h1>
     <label class="item item-input">
-        <input type="text" placeholder="Drug Name or Number" ng-model="pill">
+        <input type="text" placeholder="Drug Name" ng-model="pill">
     </label>
-    <button class="button button-balanced button-block" ng-click="viewPill(pill)">
+    <button class="button button-positive button-block" ng-click="viewPill(pill)">
       Go
     </button>
     <br>
     <ul class="list">
-        <div class="item item-divider">
-        Popular Medications
-        </div>
-            <li ng-repeat="pill in popular" class="item" ng-click="viewPill(pill)">
-                {{pill}}
-            </li>
-        </ul>
+      <div class="item item-divider">
+      Popular Medications
+      </div>
+      <li ng-repeat="pill in popular" class="item" ng-click="viewPill(pill)">
+          {{pill}}
+      </li>
+    </ul>
   </ion-content>
 </ion-view>
