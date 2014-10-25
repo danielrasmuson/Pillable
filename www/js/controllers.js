@@ -47,6 +47,7 @@ angular.module('starter.controllers', [])
   };
 })
 
+// todo put this location stuff in service
 .controller('PillCtrl', function($scope, $location) {
   $scope.pill = {
     name: $location.path().split('/').pop(),
@@ -94,6 +95,12 @@ angular.module('starter.controllers', [])
     }
     return Math.round(total/count);
   };
+
+  // todo put this in servce
+  $scope.writeReview = function(pillName){
+    window.location.replace("#/app/review/"+pillName);
+
+  };
   
 
 
@@ -101,5 +108,10 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+
+.controller('ReviewCtrl', function($scope, $location) {
+  $scope.pill = {
+    name: $location.path().split('/').pop(),
+    description: "commonly used for anxiety"
+  };
 });

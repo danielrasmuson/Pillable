@@ -48,6 +48,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'PillCtrl'
         }
       }
+    })
+
+    .state('app.review', {
+      url: "/review/:PillName",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/review.html",
+          controller: 'PillCtrl'
+        }
+      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/search');
