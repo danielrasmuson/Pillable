@@ -33,16 +33,26 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+.controller('SearchCtrl', function($scope) {
+  $scope.popular = [
+    "Vyvance",
+    "Effexor",
+    "Lexipro",
+    "Lithium",
+    "Adderall"
   ];
+
+  $scope.viewPill = function(pillName){
+    window.location.replace("#/app/pill/"+pillName);
+  };
 })
+
+.controller('PillCtrl', function($scope, $location) {
+  $scope.pillName = $location.path().split('/').pop();
+
+})
+
+
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });

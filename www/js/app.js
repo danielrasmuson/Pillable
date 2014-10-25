@@ -34,10 +34,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/search",
       views: {
         'menuContent' :{
-          templateUrl: "templates/search.html"
+          templateUrl: "templates/search.html",
+          controller: 'SearchCtrl'
         }
       }
+    })
+
+    .state('app.pill', {
+      url: "/pill/:PillName",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/pill.html",
+          controller: 'PillCtrl'
+        }
+      }
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/search');
+
+  // $route.when(
+  //     "/pill/:PillName",
+  //     {
+  //         templateUrl: "templates/pill.html",
+  //         controller: "PillCtrl"
+  //     }
+  // );
 });
 
