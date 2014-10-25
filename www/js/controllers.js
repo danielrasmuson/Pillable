@@ -118,9 +118,6 @@ angular.module('starter.controllers', [])
 
 })
 
-
-
-
 .controller('ReviewCtrl', function($scope, $location) {
   $scope.pill = {
     name: $location.path().split('/').pop(),
@@ -129,6 +126,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProfileCtrl', function($scope, $location) {
-  $scope.name = "Daniel Rasmuson";
-
+  $scope.profile = {
+    name:  "Daniel Rasmuson",
+    weight:  155,
+    bloodPressure:  100,
+    glucose:  120
+  };
+  $scope.pristine = true;
 });
