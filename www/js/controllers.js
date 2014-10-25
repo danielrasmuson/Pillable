@@ -63,7 +63,11 @@ angular.module('starter.controllers', [])
     timeOn: 70,
     moodChange: 69,
     satisfaction: 60,
-    comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
+    comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
+    profile: {
+      name: "Daniel Rasmuson",
+      image: "http://placehold.it/100x100"
+    }
   };
   $scope.pill.reviews[1] = {
     difficulty: 4,
@@ -71,7 +75,11 @@ angular.module('starter.controllers', [])
     timeOn: 30,
     moodChange: 29,
     satisfaction: 30,
-    comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
+    comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
+    profile: {
+      name: "Pete Kane",
+      image: "http://placehold.it/100x100"
+    }
   };
   $scope.pill.reviews[2] = {
     difficulty: 8,
@@ -79,7 +87,11 @@ angular.module('starter.controllers', [])
     timeOn: 120,
     moodChange: 119,
     satisfaction: 100,
-    comments: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium."
+    comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
+    profile: {
+      name: "Bill Clinton",
+      image: "http://placehold.it/100x100"
+    }
   };
 
   $scope.browser = function(link){
@@ -118,4 +130,5 @@ angular.module('starter.controllers', [])
 
 .controller('ProfileCtrl', function($scope, $location) {
   $scope.name = "Daniel Rasmuson";
+
 });
