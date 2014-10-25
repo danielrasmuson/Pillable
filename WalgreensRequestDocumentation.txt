@@ -1,0 +1,29 @@
+make a url with that request
+
+STEP 1
+heroku app
+
+
+var parmValue = $location.search().myParam
+
+call back page - in the url 
+    - code
+    - transaction_id
+
+
+
+STEP 2
+https://services-qa.walgreens.com/api/oauthtoken/v1
+application/x-www-urlencoded
+
+grand_type: authorization_code
+client_id: pllpdse 
+client_secret: apiKey
+code: From_Above**
+redirect_uri: orginalCallbackUri
+transaction_id: transaction_id
+channel: channel_same_as_before
+act: getOAuthToken
+
+
+

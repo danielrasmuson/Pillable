@@ -6,36 +6,33 @@
 <ion-content class="has-header" id="pill">
     <table class="table table-striped">
         <tr>
-            <td>Name:</td>
+            <td class="bold">Name</td>
             <td>
                 {{profile.name}}
             </td>
         </tr>    
         <tr>
-            <td>Weight:</td>
+            <td class="bold">Weight</td>
             <td>
                 {{profile.weight}}
-                <i class="icon ion-edit" ng-click="pristine = false;"></i>
+                <i class="icon ion-edit" ng-click="getWeight()"></i>
             </td>
         </tr>
         <tr>
-            <td>Blood Pressure:</td>
+            <td class="bold">Blood Pressure</td>
             <td>
                 {{profile.bloodPressure}}
-                <i class="icon ion-edit" ng-click="pristine = false;"></i>
+                <i class="icon ion-edit" ng-click="getBloodPressure()"></i>
             </td>
         </tr>
         <tr>
-            <td>Glucose:</td>
+            <td class="bold">Glucose</td>
             <td>
                 {{profile.glucose}}
-                <i class="icon ion-edit" ng-click="pristine = false;"></i>
+                <i class="icon ion-edit" ng-click="getGlucose()"></i>
             </td>
         </tr>
     </table>
-
-
-
 
     <button class="button button-balanced button-block" ng-click="viewPill(pill)" ng-disabled="pristine">
     Sync With Walgreens 

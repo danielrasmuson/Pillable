@@ -125,7 +125,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ProfileCtrl', function($scope, $location) {
+.controller('ProfileCtrl', function($scope, $location,  $ionicPopup) {
   $scope.profile = {
     name:  "Daniel Rasmuson",
     weight:  155,
@@ -133,4 +133,62 @@ angular.module('starter.controllers', [])
     glucose:  120
   };
   $scope.pristine = true;
+
+  // Triggered on a button click, or some other target
+  $scope.getNewValue = function(title, subTitle, putInputIn) {
+    console.log('clicked');
+    $scope.data = {};
+
+    // An elaborate, custom popup
+    var myPopup = $ionicPopup.show({
+        template: '<input type="tel" ng-model="data.wifi">',
+        title: 'Enter Blank',
+        subTitle: 'Please enter a number',
+        scope: $scope,
+        buttons: [
+          { text: 'Cancel' },
+          {
+            text: '<b>Save</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+              if (!$scope.data.wifi) {
+                //don't allow the user to close unless he enters wifi password
+                e.preventDefault();
+              } else {
+                return $scope.data.wifi;
+              }
+            }
+          },
+        ]
+      });
+      myPopup.then(function(res) {
+        $scope.profile[putInputIn] = parseFloat(res);
+        $scope.pristine = false;
+      });
+    };
+
+  $scope.getWeight = function(){
+    $scope.getNewValue(
+      'Enter Weight',
+      'Please enter your current weight',
+      'weight'
+    );
+  };
+
+  $scope.getBloodPressure = function(){
+    $scope.getNewValue(
+      'Enter Blood Pressure',
+      'Please enter your current blood pressure',
+      'bloodPressure'
+    );
+  };
+
+  $scope.getGlucose = function(){
+    $scope.getNewValue(
+      'Enter Glucose',
+      'Please enter your current glucose',
+      'glucose'
+    );
+  };
+
 });
