@@ -81,8 +81,8 @@ angular.module('starter.controllers', [])
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
         template: '<input type="tel" ng-model="data.wifi">',
-        title: 'Enter Blank',
-        subTitle: 'Please enter a number',
+        title: title,
+        subTitle: subTitle,
         scope: $scope,
         buttons: [
           { text: 'Cancel' },
@@ -124,8 +124,8 @@ angular.module('starter.controllers', [])
 
   $scope.getGlucose = function(){
     $scope.getNewValue(
-      'Enter Glucose',
-      'Please enter your current glucose',
+      'Enter Blood Glucose',
+      'Please enter your current blood glucose',
       'glucose'
     );
   };
