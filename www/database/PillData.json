@@ -14,7 +14,6 @@
                     "name": "Daniel Rasmuson"
                 },
                 "satisfaction": 60,
-                "timeOn": 70,
                 "weightChange": 40
             },
             {
@@ -26,7 +25,6 @@
                     "name": "Pete Kane"
                 },
                 "satisfaction": 30,
-                "timeOn": 30,
                 "weightChange": 10
             },
             {
@@ -38,7 +36,6 @@
                     "name": "Drew Powell"
                 },
                 "satisfaction": 100,
-                "timeOn": 120,
                 "weightChange": 0
             }
         ]
@@ -58,7 +55,6 @@
                     "name": "Daniel Rasmuson"
                 },
                 "satisfaction": 60,
-                "timeOn": 70,
                 "weightChange": 40
             },
             {
@@ -70,7 +66,6 @@
                     "name": "Pete Kane"
                 },
                 "satisfaction": 30,
-                "timeOn": 30,
                 "weightChange": 10
             },
             {
@@ -82,7 +77,6 @@
                     "name": "Drew Powell"
                 },
                 "satisfaction": 100,
-                "timeOn": 120,
                 "weightChange": 0
             }
         ]
@@ -102,7 +96,6 @@
                     "name": "Daniel Rasmuson"
                 },
                 "satisfaction": 60,
-                "timeOn": 70,
                 "weightChange": 40
             },
             {
@@ -114,7 +107,6 @@
                     "name": "Pete Kane"
                 },
                 "satisfaction": 30,
-                "timeOn": 30,
                 "weightChange": 10
             },
             {
@@ -126,7 +118,6 @@
                     "name": "Drew Powell"
                 },
                 "satisfaction": 100,
-                "timeOn": 120,
                 "weightChange": 0
             }
         ]
@@ -136,44 +127,7 @@
         "image": "img/pills/lithiumCarbonate.jpg",
         "information": "http://pillbox.nlm.nih.gov/pillimage/search.php",
         "refill": "http://www.walgreens.com/",
-        "reviews": [
-            {
-                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
-                "difficulty": 50,
-                "moodChange": 69,
-                "profile": {
-                    "image": "img/danielRasmuson.jpg",
-                    "name": "Daniel Rasmuson"
-                },
-                "satisfaction": 60,
-                "timeOn": 70,
-                "weightChange": 40
-            },
-            {
-                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
-                "difficulty": 40,
-                "moodChange": 29,
-                "profile": {
-                    "image": "img/peteKane.jpeg",
-                    "name": "Pete Kane"
-                },
-                "satisfaction": 30,
-                "timeOn": 30,
-                "weightChange": 10
-            },
-            {
-                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
-                "difficulty": 80,
-                "moodChange": 119,
-                "profile": {
-                    "image": "img/DrewPowell.jpg",
-                    "name": "Drew Powell"
-                },
-                "satisfaction": 100,
-                "timeOn": 120,
-                "weightChange": 0
-            }
-        ]
+        "reviews": []
     },
     "adderall": {
         "description": "commonly used for anxiety",
@@ -190,7 +144,6 @@
                     "name": "Daniel Rasmuson"
                 },
                 "satisfaction": 60,
-                "timeOn": 70,
                 "weightChange": 40
             },
             {
@@ -202,7 +155,6 @@
                     "name": "Pete Kane"
                 },
                 "satisfaction": 30,
-                "timeOn": 30,
                 "weightChange": 10
             },
             {
@@ -214,7 +166,6 @@
                     "name": "Drew Powell"
                 },
                 "satisfaction": 100,
-                "timeOn": 120,
                 "weightChange": 0
             }
         ]

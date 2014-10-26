@@ -1,11 +1,11 @@
 angular.module('starter.controllers')
 // todo put this location stuff in service
-.controller('PillCtrl', function($scope, $location) {
+.controller('PillCtrl', function($scope, $location, PillDataService) {
   $scope.toTitleCase = function(str){
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   };
 
-  $scope.pillName = $location.path().split('/').pop().toLowerCase();
+  $scope.pillName = $location.path().split('/').pop().toLowerCase().replace(' ', '_');
   $scope.overview = {
     difficulty: 0,
     weightChange: 0,
