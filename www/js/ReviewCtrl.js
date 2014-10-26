@@ -5,9 +5,9 @@ angular.module('starter.controllers')
         weightChange: 50
     };
 
-    $scope.pillName = $location.path().split('/').pop().replace(' ','_');
+    $scope.pillName = $location.path().split('/').pop().toLowerCase().replace(' ','_');
 
-    PillDataService.getPill($scope.pillName.toLowerCase()).then(function(pill){
+    PillDataService.getPill($scope.pillName).then(function(pill){
         $scope.pill = pill;
     });
 
@@ -15,25 +15,20 @@ angular.module('starter.controllers')
     //     description: "commonly used for anxiety"
     // };
 
-    $scope.comments = "";
-    $scope.difficulty = 50;
-    $scope.moodChange = 50;
-    $scope.weightChange = 50;
-    $scope.satisfaction = 50;
+    $scope.review = {
+        comment: "",
+        difficulty: 50,
+        moodChange: 50,
+        weightChange: 50,
+        satisfaction: 50,
+        profile: {
+            image: "img/danielRasmuson.jpg",
+            name: "Daniel Rasmuson"
+        },
+    };
+
     $scope.addReview = function(){
-        var reviewObj = {
-            "comment": $scope.comment,
-            "difficulty": $scope.difficulty,
-            "moodChange": $scope.moodChange,
-            "profile": {
-                "image": "img/danielRasmuson.jpg",
-                "name": "Daniel Rasmuson"
-            },
-            "satisfaction": $scope.satisfaction,
-            "weightChange": $scope.weightChange 
-        };
-        PillDataService.addReview($scope.pill, reviewObj);
-        alert('hello');
+        PillDataService.addReview($scope.pillName, $scope.review);
         window.history.back();
     };
 });

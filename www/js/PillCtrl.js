@@ -15,12 +15,18 @@ angular.module('starter.controllers')
 
 
   $scope.pill = "";
-  $.getJSON('database/PillData.json',function(pills){
-    $scope.pill = pills[$scope.pillName];
+  // $.getJSON('database/PillData.json',function(pills){
+  PillDataService.getPill($scope.pillName).then(function(pill){
+    $scope.pill = pill;
     $scope.overview.difficulty = $scope.getAverage('difficulty');
     $scope.overview.weightChange = $scope.getAverage('weightChange');
     $scope.overview.moodChange = $scope.getAverage('moodChange');
     $scope.overview.satisfaction = $scope.getAverage('satisfaction');
+    setTimeout(function() {
+      $(document).ready(function() {
+          $('.progress .progress-bar').progressbar();
+      }); 
+    }, 50);
   });
 
   $scope.getAverage = function(key){
@@ -35,11 +41,11 @@ angular.module('starter.controllers')
 
 
 
-  setTimeout(function() {
-    $(document).ready(function() {
-        $('.progress .progress-bar').progressbar();
-    }); 
-  }, 600);
+  // setTimeout(function() {
+  //   $(document).ready(function() {
+  //       $('.progress .progress-bar').progressbar();
+  //   }); 
+  // }, 600);
 
   // todo put this in servce
   $scope.writeReview = function(pillName){
