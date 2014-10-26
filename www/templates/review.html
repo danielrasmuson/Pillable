@@ -10,9 +10,10 @@
   <div class="range range-positive">
     <input type="range">
   </div>
-  <span class="item item-divider">Weight Gain</span>
+  <button ng-click="sendAlert()">alert</button>
+  <span class="item item-divider">Weight Change: {{weightChange-50}} lbs</span>
   <div class="range range-positive">
-    <input type="range">
+    <input type="range" min="0" max="100" value="{{weightChange}}" ng-model="weightChange">
   </div>
   <span class="item item-divider">Mood Changes</span>
   <div class="range range-positive">
