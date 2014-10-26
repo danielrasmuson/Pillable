@@ -1,11 +1,15 @@
 angular.module('starter.controllers')
 // todo put this location stuff in service
 .controller('PillCtrl', function($scope, $location) {
-  var nameOfMedication = $location.path().split('/').pop().toLowerCase();
+  $scope.toTitleCase = function(str){
+      return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  }
+
+  $scope.pillName = $location.path().split('/').pop().toLowerCase();
   $scope.pill = "";
   var pathToPayLayoutExample = 'database/PillData.json';
   $.getJSON(pathToPayLayoutExample,function(result){
-    $scope.pill = result[nameOfMedication];
+    $scope.pill = result[$scope.pillName];
     $scope.getAverage = function(key){
       total = 0;
       count = 0;

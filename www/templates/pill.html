@@ -1,4 +1,4 @@
-<ion-view title="{{pill.name}}">
+<ion-view title="{{toTitleCase(pillName)}}">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -17,7 +17,7 @@
       <div class="progress-bar progress-bar-danger" role="progressbar" data-transitiongoal="{{getAverage('difficulty')}}"></div>
     </div>
 
-    Weight Change 
+    Weight Changes 
     <div class="progress active">
      <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="{{getAverage('weightGain')}}"></div>
     </div>
