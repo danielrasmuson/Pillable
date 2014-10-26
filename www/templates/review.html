@@ -3,30 +3,31 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-  <h3>Review: {{pill.name}}</h3>
+  <h3>Review: {{pillName}}</h3>
   <p>{{pill.description}}</p>
 
   <span class="item item-divider">Difficulty to get off medication</span>
   <div class="range range-positive">
-    <input type="range">
+    <input type="range" ng-model="difficulty">
   </div>
-  <span class="item item-divider">Weight Change: {{weightChange-50}} lbs</span>
+  <!-- <span class="item item-divider">Weight Change: {{weightChange-50}} lbs</span> -->
+  <span class="item item-divider">Weight Change: {{weightChange-50}}lbs</span>
   <div class="range range-positive">
-    <input type="range" min="0" max="100" value="{{weightChange}}" ng-model="weightChange">
+    <input type="range" min="0" max="100" ng-model="weightChange">
   </div>
   <span class="item item-divider">Mood Changes</span>
   <div class="range range-positive">
-    <input type="range">
+    <input type="range" ng-model="moodChange">
   </div>
   <span class="item item-divider">General Satisfaction</span>
   <div class="range range-positive">
-    <input type="range">
+    <input type="range" ng-model="satisfaction">
   </div>
 
   <span class="item item-divider">Comments:</span>
   <textarea placeholder="Please enter your comments here." rows="8" cols="10"></textarea>
 
-  <button class="button button-block button-positive">
+  <button class="button button-block button-positive" ng-click="addReview()">
       Submit
   </button>
   </ion-content>

@@ -65,7 +65,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent' :{
           templateUrl: "templates/review.html",
-          controller: 'PillCtrl'
+          controller: 'ReviewCtrl'
         }
       }
     });

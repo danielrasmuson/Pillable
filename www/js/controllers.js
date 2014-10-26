@@ -47,17 +47,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ReviewCtrl', function($scope, $location) {
-  $scope.questions = {
-    weightChange: 50
-  };
-
-  $scope.pill = {
-    name: $location.path().split('/').pop(),
-    description: "commonly used for anxiety"
-  };
-})
-
 .controller('ProfileCtrl', function($scope, $location,  $ionicPopup) {
   $scope.profile = {
     name:  "Daniel Rasmuson",
