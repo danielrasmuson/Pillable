@@ -56,12 +56,6 @@ angular.module('starter.controllers', [])
     name: $location.path().split('/').pop(),
     description: "commonly used for anxiety"
   };
-
-  $scope.sendAlert = function(){
-    alert('hi');
-    console.log('he');
-  };
-
 })
 
 .controller('ProfileCtrl', function($scope, $location,  $ionicPopup) {
