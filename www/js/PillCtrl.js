@@ -18,7 +18,7 @@ angular.module('starter.controllers')
     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
     profile: {
       name: "Daniel Rasmuson",
-      image: "http://placehold.it/100x100"
+      image: "img/danielRasmuson.jpg"
     }
   };
   $scope.pill.reviews[1] = {
@@ -30,7 +30,7 @@ angular.module('starter.controllers')
     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
     profile: {
       name: "Pete Kane",
-      image: "http://placehold.it/100x100"
+      image: "img/peteKane.jpeg"
     }
   };
   $scope.pill.reviews[2] = {
@@ -41,8 +41,8 @@ angular.module('starter.controllers')
     satisfaction: 100,
     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
     profile: {
-      name: "Bill Clinton",
-      image: "http://placehold.it/100x100"
+      name: "Drew Powell",
+      image: "img/DrewPowell.jpg"
     }
   };
 
