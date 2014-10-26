@@ -113,7 +113,10 @@ angular.module('starter.controllers', [])
     window.location.replace("#/app/review/"+pillName);
 
   };
-  
+
+  $(document).ready(function() {
+      $('.progress .progress-bar').progressbar();
+  }); 
 
 
 })

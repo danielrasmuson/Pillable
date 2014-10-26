@@ -12,24 +12,35 @@
     <div class="item item-divider">
       Overview: 
     </div>
-    <table>
-      <tr>
-        <td>Difficulty to get off</td>
-        <td>{{getAverage('difficulty')}}</td>
-      </tr>
-      <tr>
-        <td>Weight Gain</td>
-        <td>{{getAverage('weightGain')}}</td>
-      </tr>
-      <tr>
-        <td>Mood Changes</td>
-        <td>{{getAverage('moodChange')}}</td>
-      </tr>
-      <tr>
-        <td>General Satisfaction</td>
-        <td>{{getAverage('satisfaction')}}</td>
-      </tr>
-    </table>
+    Difficulty to get off
+    <!-- {{getAverage('difficulty')}} -->
+
+    <div class="progress active">
+      <div class="progress-bar progress-bar-danger" role="progressbar" data-transitiongoal="20"></div>
+    </div>
+
+    Weight Gain
+    <!-- {{getAverage('weightGain')}} -->
+
+    <!-- {{getAverage('weightGain')}} -->
+    <div class="progress active">
+     <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="80"></div>
+    </div>
+
+    Mood Changes
+    <!-- {{getAverage('moodChange')}} -->
+
+    <div class="progress active">
+      <div class="progress-bar progress-bar-info" role="progressbar" data-transitiongoal="60"></div>
+    </div>
+
+    General Satisfaction
+    <!-- {{getAverage('satisfaction')}} -->
+
+    <div class="progress active">
+      <div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="55"></div>
+    </div>
+
 
     <br>
 
