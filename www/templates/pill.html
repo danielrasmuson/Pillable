@@ -13,36 +13,24 @@
       Overview: 
     </div>
     Difficulty to get off
-    <!-- {{getAverage('difficulty')}} -->
-
     <div class="progress active">
-      <div class="progress-bar progress-bar-danger" role="progressbar" data-transitiongoal="20"></div>
+      <div class="progress-bar progress-bar-danger" role="progressbar" data-transitiongoal="{{getAverage('difficulty')}}"></div>
     </div>
 
     Weight Gain
-    <!-- {{getAverage('weightGain')}} -->
-
-    <!-- {{getAverage('weightGain')}} -->
     <div class="progress active">
-     <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="80"></div>
+     <div class="progress-bar progress-bar-warning" role="progressbar" data-transitiongoal="{{getAverage('weightGain')}}"></div>
     </div>
 
     Mood Changes
-    <!-- {{getAverage('moodChange')}} -->
-
     <div class="progress active">
-      <div class="progress-bar progress-bar-info" role="progressbar" data-transitiongoal="60"></div>
+      <div class="progress-bar progress-bar-info" role="progressbar" data-transitiongoal="{{getAverage('moodChange')}}"></div>
     </div>
 
     General Satisfaction
-    <!-- {{getAverage('satisfaction')}} -->
-
     <div class="progress active">
-      <div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="55"></div>
+      <div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="{{getAverage('satisfaction')}}"></div>
     </div>
-
-
-    <br>
 
     <div class="list">
         <div class="item item-divider">
