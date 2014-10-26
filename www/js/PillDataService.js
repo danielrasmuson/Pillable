@@ -1,6 +1,6 @@
-angular.module('starter.controllers')
+angular.module('starter')
 // todo put this location stuff in service
-.service('PillDataService', function($scope, $location, $q) {
+.service('PillDataService', function($location, $q) {
 
     var pills = false;
 
