@@ -6,3 +6,9 @@ textarea{
     margin-right: auto;
     border: 1px solid #f5f5f5;
 }
+.profileImgHeader{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+
+}

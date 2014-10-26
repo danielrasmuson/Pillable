@@ -35,10 +35,10 @@ angular.module('starter.controllers', [])
 
 .controller('SearchCtrl', function($scope) {
   $scope.popular = [
-    "Vyvance",
+    "Vyvanse",
     "Effexor",
-    "Lexipro",
-    "Lithium",
+    "Lexapro",
+    "Lithium Carbonate",
     "Adderall"
   ];
 

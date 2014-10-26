@@ -3,13 +3,12 @@ angular.module('starter.controllers')
 .controller('PillCtrl', function($scope, $location) {
   $scope.toTitleCase = function(str){
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-  }
+  };
 
   $scope.pillName = $location.path().split('/').pop().toLowerCase();
-  $scope.pill = "";
   var pathToPayLayoutExample = 'database/PillData.json';
-  $.getJSON(pathToPayLayoutExample,function(result){
-    $scope.pill = result[$scope.pillName];
+  $.getJSON(pathToPayLayoutExample,function(pills){
+    $scope.pill = pills[$scope.pillName];
     $scope.getAverage = function(key){
       total = 0;
       count = 0;
@@ -30,7 +29,7 @@ angular.module('starter.controllers')
       $(document).ready(function() {
           $('.progress .progress-bar').progressbar();
       }); 
-    }, 20);
+    }, 300);
 
   });
 
