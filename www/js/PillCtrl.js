@@ -1,50 +1,12 @@
 angular.module('starter.controllers')
 // todo put this location stuff in service
 .controller('PillCtrl', function($scope, $location) {
-  $scope.pill = {
-    name: $location.path().split('/').pop(),
-    description: "commonly used for anxiety",
-    information: "http://pillbox.nlm.nih.gov/pillimage/search.php",
-    image: 'http://placehold.it/100x100',
-    refill: "http://www.walgreens.com/",
-  };
-  $scope.pill.reviews = [];
-  $scope.pill.reviews[0] = {
-    difficulty: 5,
-    weightGain: 40,
-    timeOn: 70,
-    moodChange: 69,
-    satisfaction: 60,
-    comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
-    profile: {
-      name: "Daniel Rasmuson",
-      image: "img/danielRasmuson.jpg"
-    }
-  };
-  $scope.pill.reviews[1] = {
-    difficulty: 4,
-    weightGain: 10,
-    timeOn: 30,
-    moodChange: 29,
-    satisfaction: 30,
-    comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
-    profile: {
-      name: "Pete Kane",
-      image: "img/peteKane.jpeg"
-    }
-  };
-  $scope.pill.reviews[2] = {
-    difficulty: 8,
-    weightGain: -10,
-    timeOn: 120,
-    moodChange: 119,
-    satisfaction: 100,
-    comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
-    profile: {
-      name: "Drew Powell",
-      image: "img/DrewPowell.jpg"
-    }
-  };
+  var nameOfMedication = $location.path().split('/').pop().toLowerCase();
+  $scope.pill = "";
+  var pathToPayLayoutExample = 'database/PillData.json';
+  $.getJSON(pathToPayLayoutExample,function(result){
+    $scope.pill = result[nameOfMedication];
+  });
 
   $scope.browser = function(link){
     var ref = window.open(link, '_blank', 'location=yes');
