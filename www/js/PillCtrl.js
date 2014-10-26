@@ -39,14 +39,6 @@ angular.module('starter.controllers')
     return Math.round(total/count);
   };
 
-
-
-  // setTimeout(function() {
-  //   $(document).ready(function() {
-  //       $('.progress .progress-bar').progressbar();
-  //   }); 
-  // }, 600);
-
   // todo put this in servce
   $scope.writeReview = function(pillName){
     window.location.replace("#/app/review/"+pillName);

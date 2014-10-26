@@ -1,19 +1,20 @@
 angular.module('starter.controllers')
 .controller('ReviewCtrl', function($scope, $location, PillDataService) {
+    function toTitleCase(str){
+        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    }
+
 
     $scope.questions = {
         weightChange: 50
     };
 
-    $scope.pillName = $location.path().split('/').pop().toLowerCase().replace(' ','_');
+    $scope.pillName = toTitleCase($location.path().split('/').pop().replace('_', ' '));
+    var cleanPillName = $scope.pillName.toLowerCase().replace(' ','_');
 
-    PillDataService.getPill($scope.pillName).then(function(pill){
+    PillDataService.getPill(cleanPillName).then(function(pill){
         $scope.pill = pill;
     });
-
-    // $scope.pill = {
-    //     description: "commonly used for anxiety"
-    // };
 
     $scope.review = {
         comment: "",
@@ -28,7 +29,7 @@ angular.module('starter.controllers')
     };
 
     $scope.addReview = function(){
-        PillDataService.addReview($scope.pillName, $scope.review);
+        PillDataService.addReview(cleanPillName, $scope.review);
         window.history.back();
     };
 });
