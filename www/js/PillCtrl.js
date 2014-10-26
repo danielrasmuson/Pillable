@@ -6,32 +6,46 @@ angular.module('starter.controllers')
   };
 
   $scope.pillName = $location.path().split('/').pop().toLowerCase();
-  var pathToPayLayoutExample = 'database/PillData.json';
-  $.getJSON(pathToPayLayoutExample,function(pills){
+  $scope.overview = {
+    difficulty: 0,
+    weightChange: 0,
+    moodChange: 0,
+    satisfaction: 0
+  };
+
+
+  $scope.pill = "";
+  $.getJSON('database/PillData.json',function(pills){
     $scope.pill = pills[$scope.pillName];
-    $scope.getAverage = function(key){
-      total = 0;
-      count = 0;
-      for (var i = 0; i < $scope.pill.reviews.length; i++) {
-        total += $scope.pill.reviews[i][key];
-        count += 1;
-      }
-      return Math.round(total/count);
-    };
-
-    // todo put this in servce
-    $scope.writeReview = function(pillName){
-      window.location.replace("#/app/review/"+pillName);
-
-    };
-
-    setTimeout(function() {
-      $(document).ready(function() {
-          $('.progress .progress-bar').progressbar();
-      }); 
-    }, 300);
-
+    $scope.overview.difficulty = $scope.getAverage('difficulty');
+    $scope.overview.weightChange = $scope.getAverage('weightChange');
+    $scope.overview.moodChange = $scope.getAverage('moodChange');
+    $scope.overview.satisfaction = $scope.getAverage('satisfaction');
   });
+
+  $scope.getAverage = function(key){
+    total = 0;
+    count = 0;
+    for (var i = 0; i < $scope.pill.reviews.length; i++) {
+      total += $scope.pill.reviews[i][key];
+      count += 1;
+    }
+    return Math.round(total/count);
+  };
+
+
+
+  setTimeout(function() {
+    $(document).ready(function() {
+        $('.progress .progress-bar').progressbar();
+    }); 
+  }, 1000);
+
+  // todo put this in servce
+  $scope.writeReview = function(pillName){
+    window.location.replace("#/app/review/"+pillName);
+
+  };
 
   $scope.browser = function(link){
     var ref = window.open(link, '_blank', 'location=yes');
