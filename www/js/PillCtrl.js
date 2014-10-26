@@ -39,7 +39,7 @@ angular.module('starter.controllers')
     $(document).ready(function() {
         $('.progress .progress-bar').progressbar();
     }); 
-  }, 1000);
+  }, 600);
 
   // todo put this in servce
   $scope.writeReview = function(pillName){
