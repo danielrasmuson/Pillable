@@ -10,9 +10,8 @@
 
 <ion-view>
   <ion-content>
-    <li class="item" ng-repeat="pill in pills| filter:query">
+    <li class="item" ng-repeat="pill in pills| filter:query" ng-click="viewPill(pill)">
       {{pill}}
     </li>
   </ion-content>
 </ion-view>
-
