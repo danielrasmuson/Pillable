@@ -18,6 +18,15 @@ angular.module('starter.controllers')
   // $.getJSON('database/PillData.json',function(pills){
   PillDataService.getPill($scope.pillName).then(function(pill){
     $scope.pill = pill;
+    // note make sure to include  in function
+    // $http.post('https://aqueous-temple-8608.herokuapp.com/pill/img/'+pillName, 'dataToPost')
+    // .then(function (result) {
+    //    alert(result.data) 
+    // });
+    $http.get('https://aqueous-temple-8608.herokuapp.com/pill/img/'+$scope.pillName).then(function (response) {
+      $scope.pill.image = response.data;
+    });
+
     $scope.overview.difficulty = $scope.getAverage('difficulty');
     $scope.overview.weightChange = $scope.getAverage('weightChange');
     $scope.overview.moodChange = $scope.getAverage('moodChange');
