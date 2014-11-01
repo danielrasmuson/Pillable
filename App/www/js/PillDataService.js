@@ -1,12 +1,12 @@
 angular.module('starter')
-// todo put this location stuff in service
-.service('PillDataService', function($location, $q, $http) {
+.service('PillDataService', function($location, $q) {
 
     var pills = false;
 
     var getPill = function(pillName){
         var deferred = $q.defer(); 
         if (pills){
+
             deferred.resolve(pills[pillName]);
         } else{
             console.log('getting new database');
@@ -30,3 +30,4 @@ angular.module('starter')
     addReview: addReview,
    };
 });
+
