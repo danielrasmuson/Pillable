@@ -1,6 +1,6 @@
 angular.module('starter')
 // todo put this location stuff in service
-.service('PillDataService', function($location, $q) {
+.service('PillDataService', function($location, $q, $http) {
 
     var pills = false;
 
@@ -12,7 +12,10 @@ angular.module('starter')
             console.log('getting new database');
             $.getJSON('database/PillData.json',function(data){
                 pills = data;
-                deferred.resolve(pills[pillName]);
+                $http.get('https://aqueous-temple-8608.herokuapp.com/pill/img/'+pillName).then(function (response) {
+                    pills[pillName].image = response.data;
+                    deferred.resolve(pills[pillName]);
+                });
             }); 
         } 
         return deferred.promise;
