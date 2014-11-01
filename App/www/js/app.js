@@ -40,6 +40,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.searchScreen', {
+      url: "/searchScreen",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/searchScreen.html",
+          controller: 'SearchScreenCtrl'
+        }
+      }
+    })
+
     .state('app.profile', {
       url: "/profile",
       views: {
