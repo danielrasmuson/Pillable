@@ -26,8 +26,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('app', {
       url: "/app",
       abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl'
+      templateUrl: "templates/menu.html"
     })
 
     .state('app.search', {
@@ -36,16 +35,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         'menuContent' :{
           templateUrl: "templates/search.html",
           controller: 'SearchCtrl'
-        }
-      }
-    })
-
-    .state('app.searchScreen', {
-      url: "/searchScreen",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/searchScreen.html",
-          controller: 'SearchScreenCtrl'
         }
       }
     })
@@ -79,15 +68,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     });
-  // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/search');
-
-  // $route.when(
-  //     "/pill/:PillName",
-  //     {
-  //         templateUrl: "templates/pill.html",
-  //         controller: "PillCtrl"
-  //     }
-  // );
 });
 

@@ -1,5 +1,5 @@
 angular.module('starter')
-.service('PillDataService', function($location, $q) {
+.service('PillDataService', function($location, $q, $http) {
 
     var pills = false;
 
@@ -9,7 +9,6 @@ angular.module('starter')
 
             deferred.resolve(pills[pillName]);
         } else{
-            console.log('getting new database');
             $.getJSON('database/PillData.json',function(data){
                 pills = data;
                 $http.get('https://aqueous-temple-8608.herokuapp.com/pill/img/'+pillName).then(function (response) {
