@@ -29,4 +29,16 @@ angular.module('starter.controllers', [])
     $scope.modal.show();
     document.getElementById('searchBox').focus();
   };
+
+  $scope.query = '';
+  $scope.pills = [];
+
+  $.getJSON('database/pills.json',function(result){
+      $scope.pills = result;
+  });
+
+  $scope.viewPill = function(pillName){
+    $scope.closeSearch();
+    window.location.replace("#/app/pill/"+pillName);
+  };
 });
