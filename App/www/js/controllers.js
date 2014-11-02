@@ -8,10 +8,6 @@ angular.module('starter.controllers', [])
     "Adderall"
   ];
 
-  $scope.viewPill = function(pillName){
-    window.location.replace("#/app/pill/"+pillName);
-  };
-
   $scope.viewSearch = function(){
     window.location.replace("#/app/searchScreen");
   };
@@ -24,12 +20,13 @@ angular.module('starter.controllers', [])
   });
 
   // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
+  $scope.closeSearch = function() {
     $scope.modal.hide();
   };
 
   // Open the login modal
-  $scope.login = function() {
+  $scope.search = function() {
     $scope.modal.show();
+    document.getElementById('searchBox').focus();
   };
 });
