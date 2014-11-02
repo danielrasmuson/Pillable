@@ -1,5 +1,5 @@
 angular.module('starter.controllers', [])
-.controller('SearchCtrl', function($scope, $ionicModal) {
+.controller('SearchCtrl', function($scope, $ionicModal, $http) {
   $scope.popular = [
     "Vyvanse",
     "Effexor",
@@ -33,8 +33,8 @@ angular.module('starter.controllers', [])
   $scope.query = '';
   $scope.pills = [];
 
-  $.getJSON('database/pills.json',function(result){
-      $scope.pills = result;
+  $http.get('https://aqueous-temple-8608.herokuapp.com/pills').then(function (response) {
+    $scope.pills = response.data;
   });
 
   $scope.viewPill = function(pillName){
