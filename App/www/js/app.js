@@ -67,7 +67,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'WriteReviewCtrl'
         }
       }
+    })
+
+    .state('app.review', {
+      url: "/review/:ReviewNumber",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/review.html",
+          controller: 'ReviewCtrl'
+        }
+      }
     });
+
   $urlRouterProvider.otherwise('/app/search');
 });
 

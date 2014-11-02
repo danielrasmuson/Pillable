@@ -37,7 +37,7 @@
           Reviews: 
         </div>
 
-        <a ng-repeat="review in pill.reviews" class="item item-thumbnail-left" href="#/review/{{review.review_id}}" >
+        <a ng-repeat="review in pill.reviews" class="item item-thumbnail-left" href="#/app/review/{{review.review_id}}" >
           <img ng-src="{{review.profile.image}}">
           <h2>{{review.profile.name}}</h2>
           <p>{{review.comment}}</p>
