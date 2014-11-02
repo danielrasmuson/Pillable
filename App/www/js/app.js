@@ -59,12 +59,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-    .state('app.review', {
-      url: "/review/:PillName",
+    .state('app.writereview', {
+      url: "/review/write/:PillName",
       views: {
         'menuContent' :{
-          templateUrl: "templates/review.html",
-          controller: 'ReviewCtrl'
+          templateUrl: "templates/writeReview.html",
+          controller: 'WriteReviewCtrl'
         }
       }
     });

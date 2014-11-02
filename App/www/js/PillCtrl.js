@@ -41,7 +41,7 @@ angular.module('starter.controllers')
 
   // todo put this in servce
   $scope.writeReview = function(pillName){
-    window.location.replace("#/app/review/"+pillName);
+    window.location.replace("#/app/review/write/"+pillName);
 
   };
 
