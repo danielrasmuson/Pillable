@@ -37,12 +37,12 @@
           Reviews: 
         </div>
 
-        <a ng-repeat="review in pill.reviews" class="item item-thumbnail-left" href="#" >
+        <a ng-repeat="review in pill.reviews" class="item item-thumbnail-left" href="#/review/{{review.review_id}}" >
           <img ng-src="{{review.profile.image}}">
           <h2>{{review.profile.name}}</h2>
           <p>{{review.comment}}</p>
         </a>
-
+ 
     </div>
     <ul class="list">
       <div class="item item-divider">
