@@ -15,7 +15,7 @@ angular.module('starter.controllers')
     $http.post(UrlService.baseURL+"/login", credentials)
     .then(function (result) {
         var session = result.data
-        if (JSON.parse(session)){
+        if (session !== 'false'){
           UserService.setSession(session);
           window.location.replace('#/app/search'); 
         } else {

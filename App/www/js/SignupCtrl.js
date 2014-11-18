@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 // todo put this location stuff in service
-.controller('SignupCtrl', function($scope, $http, UrlService) {
+.controller('SignupCtrl', function($scope, $http, UrlService, UserService) {
     $scope.userData = {
         firstName: "", 
         lastName: "", 
@@ -12,7 +12,6 @@ angular.module('starter.controllers')
         // note make sure to incude  in function
         $http.post(UrlService.baseURL+'/add/user', $scope.userData)
         .then(function (result) {
-           alert(result.data) 
            if (result.data === 'success'){
                 UserService.setSession('todo: make this a real session');
                 window.location.replace('#/app/search'); 
