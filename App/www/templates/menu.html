@@ -11,7 +11,7 @@
     <header class="bar bar-header bar-stable">
       <h1 class="title">Menu</h1>
     </header>
-    <ion-content class="has-header">
+    <ion-content class="has-header" ng-controller="LoginCtrl">
       <ion-list>
         <ion-item nav-clear menu-close href="#/app/search">
           <i class="icon ion-search"></i>
@@ -22,6 +22,18 @@
         <ion-item nav-clear menu-close href="#/app/profile">
           <i class="icon ion-person"></i>
           Profile
+        </ion-item>
+      </ion-list>
+      <ion-list ng-show="!session">
+        <ion-item nav-clear menu-close href="#/app/login">
+          <i class="icon ion-person"></i>
+          Login 
+        </ion-item>
+      </ion-list>
+      <ion-list ng-show="session">
+        <ion-item nav-clear menu-close href="#/app/login">
+          <i class="icon ion-person"></i>
+          Sign Out
         </ion-item>
       </ion-list>
     </ion-content>
