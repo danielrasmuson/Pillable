@@ -49,6 +49,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.login', {
+      url: "/login",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/login.html"
+        }
+      }
+    })
+
+    .state('app.signup', {
+      url: "/signup",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/signup.html",
+          controller: 'SignupCtrl'
+        }
+      }
+    })
+
     .state('app.pill', {
       url: "/pill/:PillName",
       views: {

@@ -3,7 +3,11 @@ CREATE TABLE users
 user_id bigserial primary key,
 user_first_name varchar(20) NOT NULL,
 user_last_name varchar(20) NOT NULL,
+user_email varchar(55) NOT NULL,
+user_password varchar(55) NOT NULL,
 user_date_created timestamp default NULL,
+user_session varchar(70),
+user_session_expires date,
 user_wallgreens_token varchar(70),
 user_wallgreens_token_expires date
 );
