@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
 // todo put this location stuff in service
-.controller('LoginCtrl', function($scope, UrlService, $http) {
-  $scope.session = false;
+.controller('LoginCtrl', function($scope, UrlService, $http, UserService) {
+  $scope.session = UserService.getSession();
   $scope.loginData = {
     username: "",
     password: ""
@@ -14,11 +14,13 @@ angular.module('starter.controllers')
     var credentials = {"email":$scope.loginData.username, "password": $scope.loginData.password}; 
     $http.post(UrlService.baseURL+"/login", credentials)
     .then(function (result) {
-        $scope.session = result.data;
-        console.log(result.data);
-        $scope.$apply;
+        var session = result.data
+        if (JSON.parse(session)){
+          UserService.setSession(session);
+          window.location.replace('#/app/search'); 
+        } else {
+          alert('login failed');
+        }
     });
-
-    // window.location.replace('#/app/search');
   }
 });
