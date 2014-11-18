@@ -13,6 +13,12 @@ angular.module('starter.controllers')
         $http.post(UrlService.baseURL+'/add/user', $scope.userData)
         .then(function (result) {
            alert(result.data) 
+           if (result.data === 'success'){
+                UserService.setSession('todo: make this a real session');
+                window.location.replace('#/app/search'); 
+           } else{
+                alert('signup failed');
+           }
         });
     }
 
