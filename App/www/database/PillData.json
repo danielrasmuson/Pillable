@@ -2,7 +2,6 @@
     "vyvanse": {
         "description": "commonly used for anxiety",
         "information": "http://pillbox.nlm.nih.gov/pillimage/search.php",
-        "refill": "http://www.walgreens.com/",
         "reviews": [
             {
                 "review_id": 1,
@@ -45,7 +44,6 @@
     "effexor": {
         "description": "commonly used for anxiety",
         "information": "http://pillbox.nlm.nih.gov/pillimage/search.php",
-        "refill": "http://www.walgreens.com/",
         "reviews": [
             {
                 "review_id": 4,
@@ -88,7 +86,6 @@
     "lexapro": {
         "description": "commonly used for anxiety",
         "information": "http://pillbox.nlm.nih.gov/pillimage/search.php",
-        "refill": "http://www.walgreens.com/",
         "reviews": [
             {
                 "review_id": 7,
@@ -131,13 +128,11 @@
     "lithium_carbonate": {
         "description": "commonly used for anxiety",
         "information": "http://pillbox.nlm.nih.gov/pillimage/search.php",
-        "refill": "http://www.walgreens.com/",
         "reviews": []
     },
     "adderall": {
         "description": "commonly used for anxiety",
         "information": "http://pillbox.nlm.nih.gov/pillimage/search.php",
-        "refill": "http://www.walgreens.com/",
         "reviews": [
             {
                 "review_id": 10,
