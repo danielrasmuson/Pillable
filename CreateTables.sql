@@ -16,8 +16,7 @@ CREATE TABLE userHealth
 (
 userHealth_id bigserial primary key,
 userHealth_weight integer NOT NULL,
-userHealth_blood_pressure_top integer NOT NULL,
-userHealth_blood_pressure_bot integer NOT NULL,
+userHealth_blood_pressure integer NOT NULL,
 userHealth_blood_glucose integer NOT NULL,
 userHealth_user_id bigserial NOT NULL
 );
