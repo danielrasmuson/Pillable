@@ -25,12 +25,12 @@ angular.module('starter.controllers')
         difficulty: 50,
         moodChange: 50,
         weightChange: 50,
-        satisfaction: 50,
-        pillId: pillId
+        satisfaction: 50
     };
 
     $scope.addStory = function(){
-        PillDataService.addstory($scope.story);
+        $scope.story.pillId = $scope.pill.pillId;
+        PillDataService.addStory($scope.story);
         window.history.back();
     };
 });

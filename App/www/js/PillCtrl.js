@@ -32,8 +32,8 @@ angular.module('starter.controllers')
   $scope.getAverage = function(key){
     total = 0;
     count = 0;
-    for (var i = 0; i < $scope.pill.Stories.length; i++) {
-      total += $scope.pill.Stories[i][key];
+    for (var i = 0; i < $scope.pill.stories.length; i++) {
+      total += $scope.pill.stories[i][key];
       count += 1;
     }
     return Math.round(total/count);
