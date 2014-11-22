@@ -27,13 +27,13 @@ angular.module('starter')
         return deferred.promise;
     };
 
-    var addReview = function(pillName, reviewObj){
-        pills[pillName].reviews.push(reviewObj);
+    var addStory = function(pillName, storyObj){
+        pills[pillName].storys.push(storyObj);
     };
 
    return {
     getPill: getPill,
-    addReview: addReview,
+    addStory: addStory,
    };
 });
 

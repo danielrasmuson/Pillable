@@ -32,16 +32,16 @@ angular.module('starter.controllers')
   $scope.getAverage = function(key){
     total = 0;
     count = 0;
-    for (var i = 0; i < $scope.pill.reviews.length; i++) {
-      total += $scope.pill.reviews[i][key];
+    for (var i = 0; i < $scope.pill.Stories.length; i++) {
+      total += $scope.pill.Stories[i][key];
       count += 1;
     }
     return Math.round(total/count);
   };
 
   // todo put this in servce
-  $scope.writeReview = function(pillName){
-    window.location.replace("#/app/review/write/"+pillName);
+  $scope.writeStory = function(pillName){
+    window.location.replace("#/app/story/write/"+pillName);
 
   };
 

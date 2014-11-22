@@ -78,22 +78,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-    .state('app.writereview', {
-      url: "/review/write/:PillName",
+    .state('app.writestory', {
+      url: "/story/write/:PillName",
       views: {
         'menuContent' :{
-          templateUrl: "templates/writeReview.html",
-          controller: 'WriteReviewCtrl'
+          templateUrl: "templates/writestory.html",
+          controller: 'WriteStoryCtrl'
         }
       }
     })
 
-    .state('app.review', {
-      url: "/review/:ReviewNumber",
+    .state('app.story', {
+      url: "/story/:storyNumber",
       views: {
         'menuContent' :{
-          templateUrl: "templates/review.html",
-          controller: 'ReviewCtrl'
+          templateUrl: "templates/story.html",
+          controller: 'StoryCtrl'
         }
       }
     });

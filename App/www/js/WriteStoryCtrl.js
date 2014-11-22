@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-.controller('WriteReviewCtrl', function($scope, $location, PillDataService) {
+.controller('WriteStoryCtrl', function($scope, $location, PillDataService) {
     function toTitleCase(str){
         return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     }
@@ -16,7 +16,7 @@ angular.module('starter.controllers')
         $scope.pill = pill;
     });
 
-    $scope.review = {
+    $scope.story = {
         comment: "",
         difficulty: 50,
         moodChange: 50,
@@ -28,8 +28,8 @@ angular.module('starter.controllers')
         },
     };
 
-    $scope.addReview = function(){
-        PillDataService.addReview(cleanPillName, $scope.review);
+    $scope.addStory = function(){
+        PillDataService.addstory(cleanPillName, $scope.story);
         window.history.back();
     };
 });
