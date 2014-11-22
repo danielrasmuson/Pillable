@@ -1,3 +1,4 @@
+// title, body, difficulty, weightChange, moodChange, satisfaction, userId, pillId
 angular.module('starter.controllers')
 .controller('WriteStoryCtrl', function($scope, $location, PillDataService) {
     function toTitleCase(str){
@@ -16,20 +17,20 @@ angular.module('starter.controllers')
         $scope.pill = pill;
     });
 
+    // TODO CHANGE TITLE AND USERID
     $scope.story = {
+        userId: 10,
+        title: 'TEST TITLE',
         comment: "",
         difficulty: 50,
         moodChange: 50,
         weightChange: 50,
         satisfaction: 50,
-        profile: {
-            image: "img/danielRasmuson.jpg",
-            name: "Daniel Rasmuson"
-        },
+        pillId: pillId
     };
 
     $scope.addStory = function(){
-        PillDataService.addstory(cleanPillName, $scope.story);
+        PillDataService.addstory($scope.story);
         window.history.back();
     };
 });
