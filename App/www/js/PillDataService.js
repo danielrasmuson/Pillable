@@ -5,18 +5,25 @@ angular.module('starter')
 
     var getPill = function(pillName){
         var deferred = $q.defer(); 
-        if (pills){
+        // if (pills){
 
-            deferred.resolve(pills[pillName]);
-        } else{
-            $.getJSON('database/PillData.json',function(data){
-                pills = data;
-                $http.get(UrlService.baseURL+'/pill/img/'+pillName).then(function (response) {
-                    pills[pillName].image = response.data;
-                    deferred.resolve(pills[pillName]);
-                });
-            }); 
-        } 
+            // deferred.resolve(pills[pillName]);
+        // } else{
+        // $.getJSON('database/PillData.json',function(data){
+        $http.get('http://localhost:3000/pill/'+pillName).then(function (pillResponse) {
+            var pill = pillResponse.data;
+            $http.get(UrlService.baseURL+'/pill/img/'+pillName).then(function (imgResponse) {
+                var img = imgResponse.data;
+                if (img === "false"){
+                    pill.image = "img/noImg.jpg"
+                } else{
+                    pill.image = img;
+                }
+                deferred.resolve(pill);
+            });
+        });
+
+        // } 
         return deferred.promise;
     };
 

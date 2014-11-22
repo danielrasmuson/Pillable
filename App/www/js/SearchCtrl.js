@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
     "Vyvanse",
     "Effexor",
     "Lexapro",
-    "Lithium Carbonate",
+    "Tylenol",
     "Adderall"
   ];
 
