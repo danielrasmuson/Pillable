@@ -1,14 +1,17 @@
 angular.module('starter.controllers')
 // todo put this location stuff in service
 .controller('LoginCtrl', function($scope, UrlService, $http, UserService) {
-  $scope.session = UserService.getSession();
+  $scope.userData = UserService.getSession()
+
   $scope.loginData = {
     username: "",
     password: ""
   }
+
   $scope.signup = function(){
     window.location.replace('#/app/signup'); 
   }
+
   $scope.login = function(username, password){
     // note make sure to include  in function
     var credentials = {"email":$scope.loginData.username, "password": $scope.loginData.password}; 
@@ -17,10 +20,12 @@ angular.module('starter.controllers')
         var session = result.data
         if (session !== 'false'){
           UserService.setSession(session);
-          window.location.replace('#/app/search'); 
+          // $scope.data.session = UserService.getSession();
+          // window.location.replace('#/app/search'); 
         } else {
           alert('login failed');
         }
     });
   }
+
 });

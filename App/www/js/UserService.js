@@ -6,7 +6,7 @@ angular.module('starter')
     }
 
     var getSession = function(){
-        return userData.session;
+        return userData;
     }
     var setSession = function(session){
         userData.session = session;
