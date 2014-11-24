@@ -24,14 +24,14 @@
           Profile
         </ion-item>
       </ion-list>
-      <ion-list ng-show="!session">
+      <ion-list ng-show="!userData.session">
         <ion-item nav-clear menu-close href="#/app/login">
           <i class="icon ion-person"></i>
           Login 
         </ion-item>
       </ion-list>
-      <ion-list ng-show="session">
-        <ion-item nav-clear menu-close href="#/app/login">
+      <ion-list ng-show="userData.session">
+        <ion-item nav-clear menu-close ng-click="logout()">
           <i class="icon ion-person"></i>
           Sign Out
         </ion-item>

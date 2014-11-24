@@ -20,12 +20,15 @@ angular.module('starter.controllers')
         var session = result.data
         if (session !== 'false'){
           UserService.setSession(session);
-          // $scope.data.session = UserService.getSession();
-          // window.location.replace('#/app/search'); 
+          window.location.replace('#/app/search'); 
         } else {
           alert('login failed');
         }
     });
+  }
+
+  $scope.logout = function(){
+    UserService.setSession(false);
   }
 
 });
