@@ -24,8 +24,7 @@ angular.module('starter')
     var addStory = function(storyObj){
         $http.post('http://127.0.0.1:3000/add/story', storyObj)
         .then(function (result) {
-           // alert(result.data) 
-           console.log(result.data);
+            console.log(result.data);
         });
     };
 
