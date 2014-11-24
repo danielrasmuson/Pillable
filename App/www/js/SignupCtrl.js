@@ -12,9 +12,10 @@ angular.module('starter.controllers')
         // note make sure to add to in function
         $http.post(UrlService.baseURL+'/add/user', $scope.userData)
         .then(function (result) {
-           if (result.data === 'success'){
-                UserService.setSession('todo: make this a real session');
-                window.location.replace('#/app/search');
+           if (result.data !== 'failure'){
+              console.log('Session Set: '+result.data); 
+              UserService.setSession(result.data);
+              window.location.replace('#/app/search');
            } else{
               var invalidLoginPopup = $ionicPopup.alert({
                 title: 'Login Error',

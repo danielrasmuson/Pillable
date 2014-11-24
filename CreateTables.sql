@@ -7,7 +7,7 @@ user_email varchar(55) NOT NULL,
 user_password varchar(55) NOT NULL,
 user_date_created timestamp default NULL,
 user_session varchar(70),
-user_session_expires date,
+user_session_expires varchar(70),
 user_wallgreens_token varchar(70),
 user_wallgreens_token_expires date
 );
