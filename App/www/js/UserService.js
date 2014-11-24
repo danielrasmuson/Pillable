@@ -2,7 +2,7 @@ angular.module('starter')
 .service('UserService', function() {
 
     var userData = {
-        session: false 
+        session: false
     }
 
     var getSession = function(){
