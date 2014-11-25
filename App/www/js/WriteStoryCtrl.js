@@ -1,6 +1,6 @@
 // title, body, difficulty, weightChange, moodChange, satisfaction, userId, pillId
 angular.module('starter.controllers')
-.controller('WriteStoryCtrl', function($scope, $location, PillDataService) {
+.controller('WriteStoryCtrl', function($scope, $location, PillDataService, UrlService, $ionicViewService) {
     function toTitleCase(str){
         return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     }
@@ -31,6 +31,14 @@ angular.module('starter.controllers')
     $scope.addStory = function(){
         $scope.story.pillId = $scope.pill.pillId;
         PillDataService.addStory($scope.story);
-        window.history.back();
+        // window.history.back();
+        // window.location.replace('#/app/pill/'+$scope.pillName)
+        // using the ionicViewService to hide the back button on next view
+        $ionicViewService.nextViewOptions({
+           disableBack: true
+        });
+
+        // Go back to home
+        $location.path('#/app/pill/'+$scope.pillName);
     };
 });

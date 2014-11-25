@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 // TODO put this location stuff in service
-.controller('LoginCtrl', function($scope, UrlService, $http, UserService, $ionicPopup) {
+.controller('LoginCtrl', function($scope, UrlService, $http, UserService, $ionicPopup, $ionicViewService) {
   $scope.userData = UserService.getSession()
 
   $scope.loginData = {
@@ -20,6 +20,9 @@ angular.module('starter.controllers')
         var session = result.data
         if (session !== 'false'){
           UserService.setSession(session);
+          $ionicViewService.nextViewOptions({
+             disableBack: true
+          });
           window.location.replace('#/app/search');
         } else {
           // invalidLoginPopup();
