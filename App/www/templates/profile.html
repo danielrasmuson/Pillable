@@ -34,7 +34,7 @@
         </tr>
     </table>
 
-    <button class="button button-balanced button-block" ng-click="syncWalgreen()" ng-disabled="pristine">
+    <button class="button button-balanced button-block" ng-click="syncWalgreen()" ng-show="hasWalgreensToken">
         {{walgreensText}} {{hasWalgreensToken.data}}
         <span ng-show="loading">
             <i class="fa fa-spinner fa-spin"></i>
@@ -43,7 +43,7 @@
             <i class="fa fa-check"></i>
         </span>
     </button>
-    <button class="button button-balanced button-block" ng-click="syncWalgreen()" ng-show="!hasWalgreensToken">
+    <button class="button button-balanced button-block" ng-click="connectWalgreens()" ng-show="!hasWalgreensToken">
     <!-- <button class="button button-balanced button-block" ng-click="syncWalgreen()" ng-show="!true"> -->
         Connect Walgreens Balanced Rewards
     </button>

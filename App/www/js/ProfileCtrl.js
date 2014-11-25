@@ -84,10 +84,15 @@ angular.module('starter.controllers')
     function hasWalgreensToken(session){
       $http.post(UrlService.baseURL+'/userHasWalgreensToken', {session: session})
       .then(function(result) {
-        console.log(result.data);
         $scope.hasWalgreensToken = JSON.parse(result.data);
-        // $scope.hasWalgreensToken = true;
       })
+    }
+
+    $scope.connectWalgreens = function(){
+      getWalgreensRedirectUrl(UserService.getSession().session)
+      .then(function(oauthUrl){
+        window.location.replace(oauthUrl);
+      });
     }
 
 
@@ -118,10 +123,7 @@ angular.module('starter.controllers')
       $http.post(UrlService.baseURL+'/add/health', healthData)
       .then(function (result) {
         if (result.data === 'walgreens token missing'){
-            getWalgreensRedirectUrl(UserService.getSession().session)
-            .then(function(oauthUrl){
-              window.location.replace(oauthUrl);
-            });
+          $scope.connectWalgreens();
         } else if(result.data === '200'){
           $scope.loading = false;
           $scope.successSync = true;
