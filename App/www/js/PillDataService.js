@@ -5,7 +5,7 @@ angular.module('starter')
     var getPill = function(pillName){
         var deferred = $q.defer(); 
 
-        $http.get('http://localhost:3000/pill/'+pillName).then(function (pillResponse) {
+        $http.get(UrlService.baseURL+'/pill/'+pillName).then(function (pillResponse) {
             var pill = pillResponse.data;
             $http.get(UrlService.baseURL+'/pill/img/'+pillName).then(function (imgResponse) {
                 var img = imgResponse.data;
@@ -22,7 +22,7 @@ angular.module('starter')
     };
 
     var addStory = function(storyObj){
-        $http.post('http://127.0.0.1:3000/add/story', storyObj)
+        $http.post(UrlService.baseURL+'/add/story', storyObj)
         .then(function (result) {
             console.log(result.data);
         });
