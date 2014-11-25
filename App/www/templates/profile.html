@@ -35,19 +35,23 @@
     </table>
 
     <button class="button button-balanced button-block" ng-click="syncWalgreen()" ng-disabled="pristine">
-    {{walgreensText}}
-    <span ng-show="loading">
-        <i class="fa fa-spinner fa-spin"></i>
-    </span>
-    <span ng-show="successSync">
-        <i class="fa fa-check"></i>
-    </span>
+        {{walgreensText}} {{hasWalgreensToken.data}}
+        <span ng-show="loading">
+            <i class="fa fa-spinner fa-spin"></i>
+        </span>
+        <span ng-show="successSync">
+            <i class="fa fa-check"></i>
+        </span>
+    </button>
+    <button class="button button-balanced button-block" ng-click="syncWalgreen()" ng-show="!hasWalgreensToken">
+    <!-- <button class="button button-balanced button-block" ng-click="syncWalgreen()" ng-show="!true"> -->
+        Connect Walgreens Balanced Rewards
     </button>
 
 </ion-content>
 <ion-footer-bar ng-controller="LoginCtrl" style="padding: 0px;">
     <button class="button button-positive button-block" nav-clear ng-click="logout()" id="logoutButton">
-    Logout
+    Logout 
     </button>
     <br>
 </span>

@@ -79,13 +79,17 @@ angular.module('starter.controllers')
       return deferred.promise;
     }
 
-
-    // this means we got taken from the callback
-    if ($location.search().oauthSync === 'success'){
-      var session = $location.search.session;
-      UserService.setSession(session);
-      sendWalgreensRequest();
+    $scope.hasWalgreensToken = false;
+    hasWalgreensToken(UserService.getSession().session);
+    function hasWalgreensToken(session){
+      $http.post(UrlService.baseURL+'/userHasWalgreensToken', {session: session})
+      .then(function(result) {
+        console.log(result.data);
+        $scope.hasWalgreensToken = JSON.parse(result.data);
+        // $scope.hasWalgreensToken = true;
+      })
     }
+
 
     // they clicked the button
     $scope.loading = false;
@@ -93,6 +97,7 @@ angular.module('starter.controllers')
     $scope.walgreensText = "Sync With Walgreens";
     $scope.syncWalgreen = function(){
         $scope.loading = true;
+        $scope.successSync = false;
         $scope.walgreensText = "Syncing";
         sendWalgreensRequest();
     };
@@ -102,7 +107,7 @@ angular.module('starter.controllers')
         console.log('You need to be logged in to access the Walgreens API.');
         return;
       }
-      
+
       var healthData = {
         weight: $scope.profile.weight,
         bloodPressure: $scope.profile.bloodPressure,
@@ -117,7 +122,7 @@ angular.module('starter.controllers')
             .then(function(oauthUrl){
               window.location.replace(oauthUrl);
             });
-        } else if(result.data === 'true'){
+        } else if(result.data === '200'){
           $scope.loading = false;
           $scope.successSync = true;
           $scope.walgreensText = "Sync Successful!";
