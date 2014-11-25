@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-.controller('ProfileCtrl', function($scope, $routeParams, $ionicPopup, $http, UserService, UrlService, $q) {
+.controller('ProfileCtrl', function($scope, $location, $ionicPopup, $http, UserService, UrlService, $q) {
     $scope.profile = {
       name:  "Daniel Rasmuson",
       weight:  155,
@@ -7,6 +7,8 @@ angular.module('starter.controllers')
       glucose:  120
     };
     $scope.pristine = true;
+
+
 
     // Triggered on a button click, or some other target
     // TODO add value validating on here
@@ -77,44 +79,45 @@ angular.module('starter.controllers')
       return deferred.promise;
     }
 
-    if ($routeParams.oauthSync === 'success'){
-      console.log('you should run that fancy stuff!');
+
+    // this means we got taken from the callback
+    if ($location.search().oauthSync === 'success'){
+      sendWalgreensRequest();
     }
 
+    // they clicked the button
     $scope.loading = false;
     $scope.successSync = false;
     $scope.walgreensText = "Sync With Walgreens";
     $scope.syncWalgreen = function(){
         $scope.loading = true;
         $scope.walgreensText = "Syncing";
-
-        var healthData = {
-          weight: $scope.profile.weight,
-          bloodPressure: $scope.profile.bloodPressure,
-          glucose: $scope.profile.glucose,
-          session: UserService.getSession().session
-        }; 
-
-        console.log(UrlService.baseURL+'/add/health');
-        console.log(healthData);
-        $http.post(UrlService.baseURL+'/add/health', healthData)
-        .then(function (result) {
-          if (result.data === 'walgreens token missing'){
-            getWalgreensRedirectUrl(UserService.getSession().session)
-            .then(function(oauthUrl){
-              window.location.replace(oauthUrl);
-            });
-          } else{
-            console.log(result.data);
-          }
-        });
-
-        setTimeout(function() {
-            $scope.loading = false;
-            $scope.successSync = true;
-            $scope.walgreensText = "Sync Successful!";
-            $scope.$apply();
-        }, 1500);
+        sendWalgreensRequest();
     };
+
+    function sendWalgreensRequest(){
+      var healthData = {
+        weight: $scope.profile.weight,
+        bloodPressure: $scope.profile.bloodPressure,
+        glucose: $scope.profile.glucose,
+        session: UserService.getSession().session
+      }; 
+
+      $http.post(UrlService.baseURL+'/add/health', healthData)
+      .then(function (result) {
+        if (result.data === 'walgreens token missing'){
+          getWalgreensRedirectUrl(UserService.getSession().session)
+          .then(function(oauthUrl){
+            window.location.replace(oauthUrl);
+          });
+        } else if(result.data === 'true'){
+          $scope.loading = false;
+          $scope.successSync = true;
+          $scope.walgreensText = "Sync Successful!";
+        } else {
+          console.log('Unknown Error: '+result.data);
+        }
+      });
+    }
 
 });
