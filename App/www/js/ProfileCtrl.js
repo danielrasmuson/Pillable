@@ -82,6 +82,8 @@ angular.module('starter.controllers')
 
     // this means we got taken from the callback
     if ($location.search().oauthSync === 'success'){
+      var session = $location.search.session;
+      UserService.setSession(session);
       sendWalgreensRequest();
     }
 
@@ -96,6 +98,11 @@ angular.module('starter.controllers')
     };
 
     function sendWalgreensRequest(){
+      if (UserService.getSession().session === false){
+        console.log('You need to be logged in to access the Walgreens API.');
+        return;
+      }
+      
       var healthData = {
         weight: $scope.profile.weight,
         bloodPressure: $scope.profile.bloodPressure,
@@ -106,10 +113,10 @@ angular.module('starter.controllers')
       $http.post(UrlService.baseURL+'/add/health', healthData)
       .then(function (result) {
         if (result.data === 'walgreens token missing'){
-          getWalgreensRedirectUrl(UserService.getSession().session)
-          .then(function(oauthUrl){
-            window.location.replace(oauthUrl);
-          });
+            getWalgreensRedirectUrl(UserService.getSession().session)
+            .then(function(oauthUrl){
+              window.location.replace(oauthUrl);
+            });
         } else if(result.data === 'true'){
           $scope.loading = false;
           $scope.successSync = true;
