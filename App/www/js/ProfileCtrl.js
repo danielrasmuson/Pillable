@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-.controller('ProfileCtrl', function($scope, $location,  $ionicPopup, $http, UserService, UrlService) {
+.controller('ProfileCtrl', function($scope, $routeParams, $ionicPopup, $http, UserService, UrlService, $q) {
     $scope.profile = {
       name:  "Daniel Rasmuson",
       weight:  155,
@@ -9,6 +9,7 @@ angular.module('starter.controllers')
     $scope.pristine = true;
 
     // Triggered on a button click, or some other target
+    // TODO add value validating on here
     $scope.getNewValue = function(title, subTitle, putInputIn) {
       $scope.data = {};
 
@@ -64,6 +65,22 @@ angular.module('starter.controllers')
       );
     };
 
+    function getWalgreensRedirectUrl(session){
+      var deferred = $q.defer(); 
+
+      $http.post(UrlService.baseURL+'/getCode', {session: session})
+      .then(function(result) {
+        // console.log(result.data);
+        deferred.resolve(result.data);
+      })
+
+      return deferred.promise;
+    }
+
+    if ($routeParams.oauthSync === 'success'){
+      console.log('you should run that fancy stuff!');
+    }
+
     $scope.loading = false;
     $scope.successSync = false;
     $scope.walgreensText = "Sync With Walgreens";
@@ -82,7 +99,14 @@ angular.module('starter.controllers')
         console.log(healthData);
         $http.post(UrlService.baseURL+'/add/health', healthData)
         .then(function (result) {
-          console.log(result.data);
+          if (result.data === 'walgreens token missing'){
+            getWalgreensRedirectUrl(UserService.getSession().session)
+            .then(function(oauthUrl){
+              window.location.replace(oauthUrl);
+            });
+          } else{
+            console.log(result.data);
+          }
         });
 
         setTimeout(function() {

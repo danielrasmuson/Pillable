@@ -13,7 +13,6 @@ angular.module('starter.controllers')
         $http.post(UrlService.baseURL+'/add/user', $scope.userData)
         .then(function (result) {
            if (result.data !== 'failure'){
-              console.log('Session Set: '+result.data); 
               UserService.setSession(result.data);
               window.location.replace('#/app/search');
            } else{
