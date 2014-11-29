@@ -14,6 +14,11 @@ function getPillData(pillName){
     var deferred = $q.defer(); 
 
     unirest.get(getUrl).end(function(response){
+        if (response.raw_body === undefined){
+            deferred.resolve(false);
+            return;
+        }
+
         parseString(response.raw_body, function (err, result) {
             if (result.Pills.pill == undefined){
                 deferred.resolve(false);
