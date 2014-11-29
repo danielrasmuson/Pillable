@@ -9,6 +9,7 @@
 var express = require('express');
 var router = express.Router();
 var getUser = require('../scripts/getUser').getUser
+var getUrls = require('../scripts/getUrls').getUrls
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)
@@ -26,7 +27,7 @@ function getOAuthUrl(userId, hostedDomain, transactionId){
 router.post('/', function(req, res) {
     getUser(req.body.session).then(function(userId){
         // var oauthUrl = getOAuthUrl(userId, "https://aqueous-temple-8608.herokuapp.com", getRandomInt(0, 10000000));
-        var oauthUrl = getOAuthUrl(userId, "http://localhost:3000/", getRandomInt(0, 10000000));
+        var oauthUrl = getOAuthUrl(userId, getUrls().server, getRandomInt(0, 10000000));
         console.log('here is the url: '+oauthUrl);
         res.send(oauthUrl);
     });
