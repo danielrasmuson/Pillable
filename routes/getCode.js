@@ -9,7 +9,7 @@
 var express = require('express');
 var router = express.Router();
 var getUser = require('../scripts/getUser').getUser
-var getUrls = require('../scripts/getUrls').getUrls
+var getUrls = require('../scripts/UrlService').getUrls
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)

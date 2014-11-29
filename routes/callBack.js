@@ -4,7 +4,7 @@ var url = require('url');
 var unirest = require('unirest');
 var pg = require('pg');
 var getSession = require("../scripts/getSession").getSession;
-var getUrls = require("../scripts/getUrls").getUrls;
+var getUrls = require("../scripts/UrlService").getUrls;
 var $q = require('q');
 
 
