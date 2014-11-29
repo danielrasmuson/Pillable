@@ -43,7 +43,8 @@ router.get('/', function(req, res) {
       "grant_type": "authorization_code",
       "client_id": "pllpdse",
       "client_secret": "Eu9ZiReoEQbKZu6GQzrJTLW2LsQiKJHk",
-      "redirect_uri": "https://aqueous-temple-8608.herokuapp.com/callBack",
+      // "redirect_uri": "https://aqueous-temple-8608.herokuapp.com/callBack",
+      "redirect_uri": "http://localhost:3000"+"/callBack",
       "transaction_id": urlParams.transaction_id,
       "channel": 1,
       "act": "getOAuthToken",
@@ -58,8 +59,8 @@ router.get('/', function(req, res) {
             .then(function(success){
                 if (success){
                     // todo change this back
-                    // res.redirect("http://localhost:8100/#/app/login");
-                    res.redirect("http://danielrasmuson.github.io/#/app/login");
+                    res.redirect("http://localhost:8100/#/app/login");
+                    // res.redirect("http://danielrasmuson.github.io/#/app/login");
                 } else{
                     console.log(success);
                     res.send('failure');
