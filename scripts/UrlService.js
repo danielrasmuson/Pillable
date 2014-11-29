@@ -6,7 +6,7 @@ var getUrls = function(){
     return {
         // server: 'https://aqueous-temple-8608.herokuapp.com',
         server: 'http://localhost:3000',
-        app: 'http://localhost:8100/#/app/login'
+        app: 'http://localhost:8100'
     }
 }
 

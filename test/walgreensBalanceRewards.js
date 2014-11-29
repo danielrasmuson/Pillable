@@ -1,4 +1,4 @@
-var syncHealthDataWithWalgreens = require("../../../scripts/walgreensBalanceRewards").syncHealthDataWithWalgreens;
+var syncHealthDataWithWalgreens = require("../scripts/walgreensBalanceRewards").syncHealthDataWithWalgreens;
 
 var result = syncHealthDataWithWalgreens(10, 100, 100, 100)
 

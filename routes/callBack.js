@@ -58,7 +58,7 @@ router.get('/', function(req, res) {
             addToken(userId, response.body.access_token, response.body.access_token_expires_in)
             .then(function(success){
                 if (success){
-                    res.redirect(getUrls().app);
+                    res.redirect(getUrls().app+'/#/app/login');
                 } else{
                     console.log(success);
                     res.send('failure');
