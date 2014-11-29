@@ -13,7 +13,6 @@ function getSession(userId){
                 done();
             } else{
                 if (result.rows.length == 0){
-                    console.log('Session Not found for UserID: '+userId);
                     deferred.resolve(false);
                     done();
                 } else{
