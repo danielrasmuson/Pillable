@@ -4,7 +4,7 @@ var expect = require('chai').expect;
 
 var ACTIVE_USERID = 4;
 
-describe('Get Session', function(){
+describe('getSession', function(){
     var session;
     before(function(done){
         getSession(ACTIVE_USERID).then(function(userSession){

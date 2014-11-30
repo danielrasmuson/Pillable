@@ -89,7 +89,8 @@ function sendData(data){
     .send(JSON.stringify(data))
     .end(function (response) {
         if (response.body.error != undefined){
-            console.log('ERROR: walgreens posted failed!');
+            console.log('ERROR: walgreens post failed!');
+            console.log('ERROR: '+JSON.stringify(response.body.error));
             deferred.resolve(false);
         } else{
             deferred.resolve(true);
