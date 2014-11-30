@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var $q = require('q');
+var cors = require('cors');
 
 // THE BELOW ROUTES RETURNS THIS
 // "description": "commonly used for anxiety",
@@ -106,7 +107,8 @@ function getPillInfo(pillName){
   return deferred.promise;
 }
 
-router.get('/', function(req, res) {
+
+router.get('/', cors(), function(req, res) {
     var pillName = req.originalUrl.split('/').pop();
     getPillInfo(pillName).then(function(pillInfo){
       if (pillInfo.pill_id !== undefined){
