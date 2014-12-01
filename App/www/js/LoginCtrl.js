@@ -14,10 +14,8 @@ angular.module('starter.controllers')
 
     //Check if it already exists or not
     if(applaunchCount){
-      console.log(applaunchCount);
        //This is a second time launch, and count = applaunchCount
     }else{
-      console.log(applaunchCount);
       //Local storage is not set, hence first time launch. set the local storage item
       window.localStorage.setItem('launchCount',1);
 
