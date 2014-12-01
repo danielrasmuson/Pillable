@@ -17,21 +17,15 @@
           <i class="icon ion-search"></i>
           Find Pill 
         </ion-item>
-      </ion-list>
-      <ion-list ng-show="userData.session">
-        <ion-item nav-clear menu-close href="#/app/profile">
+        <ion-item nav-clear menu-close href="#/app/profile" ng-show="userData.session">
           <i class="icon ion-person"></i>
           Profile
         </ion-item>
-      </ion-list>
-      <ion-list ng-show="!userData.session">
-        <ion-item nav-clear menu-close href="#/app/login">
+        <ion-item nav-clear menu-close href="#/app/login" ng-show="!userData.session">
           <i class="icon ion-person"></i>
           Login 
         </ion-item>
-      </ion-list>
-      <ion-list>
-        <ion-item nav-clear menu-close href="#/app/about">
+        <ion-item nav-clear menu-close ng-click="about()">
           About 
         </ion-item>
       </ion-list>

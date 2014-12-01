@@ -1,7 +1,15 @@
 angular.module('starter.controllers')
 // TODO put this location stuff in service
-.controller('LoginCtrl', function($scope, UrlService, $http, UserService, $ionicPopup, $ionicViewService) {
+.controller('LoginCtrl', function($scope, UrlService, $http, UserService, $ionicPopup, $ionicViewService, $ionicModal) {
   $scope.userData = UserService.getSession()
+
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/about.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
 
   $scope.loginData = {
     username: "",
@@ -38,5 +46,17 @@ angular.module('starter.controllers')
     UserService.setSession(false);
     window.location.replace('#/app/login');
   }
+
+  // Open the login modal
+  $scope.about = function() {
+    $scope.modal.show();
+  };
+
+  // Triggered in the login modal to close it
+  $scope.closeAbout = function() {
+    $scope.modal.hide();
+  };
+
+
 
 });
