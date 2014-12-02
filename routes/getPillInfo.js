@@ -58,6 +58,7 @@ function getStories(client, pillId){
       storyData.rows.forEach(function(row){
         stories.push({
           "story_id": row.story_id,
+          "title": row.story_title,
           "comment": row.story_body,
           "difficulty": row.story_difficulty,
           "moodChange": row.story_mood_change,
