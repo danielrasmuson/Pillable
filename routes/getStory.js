@@ -6,6 +6,7 @@ var cors = require('cors');
 
 // {
 //     "story_id": 1,
+//     "title": "ksldjfaldjs",
 //     "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi rem dolores possimus, magni porro similique ipsum dignissimos perferendis dicta ab saepe excepturi cumque facilis earum nemo maxime nam architecto laudantium.",
 //     "difficulty": 50,
 //     "moodChange": 69,
@@ -44,7 +45,15 @@ function getStoryInfo(storyId){
 router.get('/', cors(), function(req, res) {
     var storyId = req.originalUrl.split('/').pop();
     getStoryInfo(storyId).then(function(storyInfo){
-        res.send(storyInfo);
+      var story = {
+        "title": storyInfo.story_title,
+        "comment": storyInfo.story_body,
+        "difficulty": storyInfo.story_difficulty,
+        "moodChange": storyInfo.story_mood_change,
+        "satisfaction": storyInfo.story_satisfaction,
+        "weightChange": storyInfo.story_weight_change
+      }
+      res.send(story);
     });
 });
 
