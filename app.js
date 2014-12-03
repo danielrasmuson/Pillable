@@ -17,6 +17,7 @@ var login = require('./routes/login');
 var getCode = require('./routes/getCode');
 var callBack = require('./routes/callBack');
 var userHasWalgreensToken = require('./routes/userHasWalgreensToken');
+var getStory = require('./routes/getStory');
 
 var app = express();
 var cors = require('cors');
@@ -63,6 +64,7 @@ app.use('/login', login);
 app.use('/callBack', callBack);
 app.use('/getCode', getCode);
 app.use('/userHasWalgreensToken', userHasWalgreensToken);
+app.use('/story/:id', getStory);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
